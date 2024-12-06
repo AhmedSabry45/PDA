@@ -1,0 +1,223 @@
+﻿@{
+    ViewBag.Title = "Container Form";
+}
+
+<html>
+<head>
+    <title>Container Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container mt-4">
+        <form id="containerForm" asp-controller="Container" asp-action="SaveContainer" method="post" enctype="multipart/form-data">
+            <!-- Container Information -->
+            <div class="form-section">
+                <h3>Container Information</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="Date" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="rotationNumber">Rotation Number</label>
+                            <input type="text" id="rotationNumber" name="RotationNumber" class="form-control" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="vesselName">Vessel Name</label>
+                            <input type="text" id="vesselName" name="VesselName" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="containerNo">Container No.</label>
+                            <input type="text" id="containerNo" name="ContainerNo" class="form-control" required />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container Description -->
+            <div class="form-section">
+                <h3>Container Description</h3>
+
+                <!-- Made Of Field -->
+                <div class="form-group">
+                    <label for="madeOf">Made Of</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="Steel" name="Steel" value="Steel" />
+                        <label class="form-check-label" for="Steel">Steel</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="Aluminum" name="Aluminum" value="Aluminum" />
+                        <label class="form-check-label" for="Aluminum">Aluminum</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="Reefer" name="Reefer" value="Reefer" />
+                        <label class="form-check-label" for="Reefer">Reefer</label>
+                    </div>
+                </div>
+
+                <!-- Size -->
+                <div class="form-group">
+                    <label>Size</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="Size20" name="Size" value="20" />
+                        <label class="form-check-label" for="Size20">20</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="Size40" name="Size" value="40" />
+                        <label class="form-check-label" for="Size40">40</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="Size45" name="Size" value="45" />
+                        <label class="form-check-label" for="Size45">45</label>
+                    </div>
+                </div>
+
+                <!-- Type -->
+                <div class="form-group">
+                    <label>Type</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="Tank" name="Type" value="Tank" />
+                        <label class="form-check-label" for="Tank">Tank</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="Empty" name="Type" value="Empty" />
+                        <label class="form-check-label" for="Empty">Empty</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="Laden" name="Type" value="Laden" />
+                        <label class="form-check-label" for="Laden">Laden</label>
+                    </div>
+                </div>
+
+                <!-- Damage -->
+                <div class="form-group">
+                    <label>Damage</label>
+                    @foreach (var damage in ViewBag.DamageItems)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="damage-@damage.DamageId" name="DamageCodes" value="@damage.DamageId" />
+                            <label class="form-check-label" for="damage-@damage.DamageId">@damage.DamageType</label>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Signature -->
+            <div class="form-section">
+                <h3>Signature</h3>
+                <div>
+                    <canvas id="signature-pad" class="border" width="400" height="150"></canvas>
+                    <button type="button" id="clear-signature" class="btn btn-secondary mt-2">Clear</button>
+                    <textarea id="signature-result" name="Signature" hidden></textarea>
+                    <span id="signature-error" class="text-danger" style="display: none;">Signature is required</span>
+                </div>
+            </div>
+
+            <!-- Upload Image -->
+            <div class="form-section">
+                <h3>Upload Image</h3>
+                <div class="form-group">
+                    <input type="file" id="file-upload" name="UploadedFile" class="form-control" onchange="previewImage(event)" />
+                    <img id="uploaded-image-preview" src="#" alt="Preview" style="max-width: 100%; margin-top: 10px; display: none;" />
+                    <span id="file-error" class="text-danger" style="display: none;">Please upload a valid image</span>
+                </div>
+            </div>
+
+            <!-- Submit Buttons -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-primary" onclick="window.print()">Print</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <script>
+        // Signature pad logic
+        const signaturePad = new SignaturePad(document.getElementById('signature-pad'));
+        const clearButton = document.getElementById('clear-signature');
+        const signatureResult = document.getElementById('signature-result');
+        const signatureError = document.getElementById('signature-error');
+
+        clearButton.addEventListener('click', () => {
+            signaturePad.clear();
+            signatureError.style.display = 'none';
+        });
+
+        // Image preview logic
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const img = document.getElementById('uploaded-image-preview');
+                img.src = reader.result;
+                img.style.display = 'block';
+                document.getElementById('file-error').style.display = 'none';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        // Form validation
+        document.getElementById('containerForm').addEventListener('submit', function (e) {
+            let valid = true;
+
+            // Validate MadeOf
+            const madeOf = document.getElementById('madeOf');
+            if (!madeOf.value) {
+                madeOf.classList.add('is-invalid');
+                valid = false;
+            } else {
+                madeOf.classList.remove('is-invalid');
+            }
+
+            // Validate Size
+            const size = document.querySelector('input[name="Size"]:checked');
+            if (!size) {
+                alert("Please select a size.");
+                valid = false;
+            }
+
+            // Validate Type
+            const type = document.querySelector('input[name="Type"]:checked');
+            if (!type) {
+                alert("Please select a type.");
+                valid = false;
+            }
+
+            // Validate Signature
+            if (signaturePad.isEmpty()) {
+                signatureError.style.display = 'block';
+                valid = false;
+            } else {
+                signatureError.style.display = 'none';
+                signatureResult.value = signaturePad.toDataURL('image/png');
+            }
+
+            // Validate Image File
+            const fileInput = document.getElementById('file-upload');
+            const file = fileInput.files[0];
+            if (file && !file.type.startsWith('image/')) {
+                document.getElementById('file-error').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('file-error').style.display = 'none';
+            }
+
+            // Prevent form submission if invalid
+            if (!valid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

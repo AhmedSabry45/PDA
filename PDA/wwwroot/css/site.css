@@ -1,0 +1,335 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+/* src/constants.css */
+/* fixed colors */
+
+:root {
+    /* that its it the primary color  */
+    --primary-color: #1E1450;
+    --primary-color1: #3E3C90;
+    --primary-color2: #5154B6;
+    --primary-color3: #B8B6EB;
+    --primary-color4: #ECECFF;
+    --primary-color5: #1E1465;
+    /* that its it the primary black color  */
+
+
+    --PrimaryBlack-color1: #0F0F19;
+    --PrimaryBlack-color2: #3A3A42;
+    --PrimaryBlack-color2: #6E6E72;
+    --PrimaryBlack-color3: #D5D5DD;
+    --PrimaryBlack-color4: #EBEBF0;
+    /* the secondry color  */
+    --secondary-color1: #FF2261;
+    --secondary-color2: #FF3C14;
+    --secondary-color3: #3230BE;
+    --secondary-color4: #00E68C;
+    /* the semantic color  */
+
+    --Error-color: #FF5F5F;
+    --Warning-color1: #FFC90C;
+    --Success-color1: #6FD420;
+}
+
+.block {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.DpWorldPurpleGradients {
+    background: linear-gradient(to right, #1E1343, #312A82,#5154B6);
+}
+
+.DpWorldPurple {
+    background: #5154B6 !important;
+}
+
+.PortTerminal {
+    background: linear-gradient(to right, #FF1E4A, #FF4556,#FF909A);
+}
+
+.Logistics {
+    background: linear-gradient(to right, #FF3C14, #FF5C32,#FFA976);
+}
+
+.MarineServices {
+    background: linear-gradient(to right, #22299C, #5782EB,#5EA2F6);
+}
+
+.EconomicZones {
+    background: linear-gradient(to right, #00C6AD, #53E5B7,#9FE9D4);
+}
+
+.DPWorldBlackGradient {
+    background: linear-gradient(to right, #0F0F19, #1C1825);
+}
+
+.DPWorldBlackGradient1 {
+    background: linear-gradient(to right, #6E6E72, #D5D5DD);
+}
+/* end of color */
+/* fixed styles and common */
+.formStyle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* span required input */
+.required {
+    color: red
+}
+/* Style for all input placeholders */
+::placeholder {
+    color: #888888; /* Placeholder text color */
+    font-family: "pilat-Demi" opacity: 1; /* Ensures full opacity for the placeholder */
+}
+
+/* Specific styling for input fields */
+input::placeholder {
+    color: #888888; /* Placeholder text color for input fields */
+    font-family: "pilat-Demi";
+    opacity: 1; /* Ensures full opacity for the placeholder */
+}
+
+/* Specific styling for textarea placeholders */
+textarea::placeholder {
+    color: #888888; /* Placeholder text color for textareas */
+    opacity: 1; /* Ensures full opacity for the placeholder */
+}
+
+/* Apply different styles for input fields on focus */
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: #555555; /* Change placeholder color when input is focused */
+    font-style: normal; /* Change font style when input is focused */
+    opacity: 0.7; /* Slightly reduce opacity when focused */
+}
+
+
+/* ANOTHER Button for create  */
+
+.gradient-border-button {
+    color: white; /* Set text color to contrast with the background */
+    background-color: var(--BackgroundColor); /* Apply the background color */
+    border: none;
+    padding: 6px 16px;
+    border-radius: 24px;
+    cursor: pointer;
+    /* box-shadow: 1px 0 4px -2px transparent,
+              0px 1px 0 0px var(--PrimaryBlack-color1),
+              0 0px 0 1px var(--PrimaryBlack-color2),
+              0 0 0px 2px var(--PrimaryBlack-color3);  */
+}
+
+/* for search outside the table  */
+/* div of search bar */
+.SearchBarr {
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stage {
+    @include full-header-color(var(--primary-color1));
+    transition: all 0.3s ease-in-out;
+    &.faded
+
+{
+    @include full-header-color(var(--primary-color1));
+}
+
+}
+
+@include firefox-vh(".stage");
+
+.searchbar {
+    position: relative;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.btn-extended {
+    width: 300px;
+    opacity: 1;
+    border-radius: 40px 0 0 40px;
+    margin-left: -300px;
+    padding: 12.5px 30px;
+}
+
+}
+
+.btn-search {
+    position: absolute;
+    background-color: var(--primary-color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    margin-left: -35px;
+    top: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-extended {
+    position: absolute;
+    width: 0px;
+    left: 50%;
+    margin-left: 35px;
+    top: 50%;
+    border-radius: 40px;
+    padding: 0;
+    font-size: 16px;
+    border: none;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    &:focus
+
+{
+    outline-width: 0px;
+}
+
+}
+}
+
+.credit {
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    padding: 5px 20px;
+}
+/* end style of search outside the table  */
+
+/* search inside the table  */
+
+
+
+
+@font-face {
+    font-family: Pilat-Regular;
+    src: url('../FixedFont/Light.otf');
+}
+
+@font-face {
+    font-family: pilat-Bold;
+    src: url('../FixedFont/Heavy.otf');
+}
+
+@font-face {
+    font-family: pilat-Demi;
+    src: url('../FixedFont/Demi.otf');
+}
+
+.start {
+    padding: 10px;
+    margin-bottom: 100px;
+}
+
+
+/* detailsBasicStyle of the popup of style */
+
+.styleOfDetails {
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #b9b9b9;
+}
+
+.detail {
+    padding: 10px 0px;
+    display: flex;
+    font-size: 14px;
+    padding-right: 10px;
+    align-items: center;
+    font-family: "pilat-Demi";
+}
+
+.label {
+    font-weight: bold;
+    /* Adjust as needed to control label width */
+    color: black;
+    width: 150px;
+    border-right: 1px solid #D5D5DD;
+}
+
+.value {
+    flex-grow: 1;
+    color: black !important;
+    font-family: "Pilat-Regular";
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 6px;
+}
+
+/* detailsBasicStyle of the popup of style */
+.detailsBasicStyle {
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+    .detailsBasicStyle::-webkit-scrollbar {
+        width: 5px; /* Adjust the width as needed */
+    }
+
+    .detailsBasicStyle::-webkit-scrollbar-thumb {
+        background-color: rgb(180, 178, 178); /* Set the scrollbar handle color to white */
+        border-radius: 5px; /* Rounded corners for the handle */
+    }
+
+        .detailsBasicStyle::-webkit-scrollbar-thumb:hover {
+            background-color: #ccc; /* Change the handle color on hover if desired */
+        }
+/* styles.css (global) or your.component.css (component-specific) */
+.error-snackbar {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    width: auto;
+}
+
+/* app.component.css */
+.toast-center {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*
+input {
+    border: none !important;
+    border-bottom: 1px solid #6e6e7294 !important;
+    outline: none !important;
+    border-radius: 0px !important;
+}*/

@@ -1,0 +1,368 @@
+﻿@{
+    ViewData["Title"] = "INVOICES";
+}
+
+<div class="container-fluid bg-breadcrumb" style="padding: 0px;height:250px;
+    margin-top: -20px;">
+    <div class="bg-breadcrumb1">
+        <div class="container text-center py-5" style="max-width: 500px;">
+            <h1 class="text-white display-3 mb-4" style="font-family: 'pilat-Demi'!important;">LASHING</h1>
+        </div>
+    </div>
+</div>
+
+
+
+@model VesselVoyage
+
+<div class="container-form">
+    <form asp-action="SubmitLashingForm" asp-controller="Lashing" method="post">
+        <div class="row">
+            <h3>Lashing Completion Advice</h3>
+
+            <div>
+                <div class="mb-3">
+                    <label for="vesselName" class="form-label">Vessel Name</label>
+                    <input type="text" id="vesselName" asp-for="VesselName" class="form-control" required />
+                    <span asp-validation-for="VesselName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="voyageNumber" class="form-label">Voyage Number</label>
+                    <input type="text" id="VoyageId" asp-for="Id" class="form-control" required />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="rotationNumber" class="form-label">Rotation Number</label>
+                    <input type="text" id="rotationNumber" asp-for="RotationNumber" class="form-control" required />
+                    <span asp-validation-for="RotationNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="box">
+                <h5>Declaration</h5>
+                <p>
+                    I undersigned accept that all the lashing has been carried out satisfactorily
+                    on all hatches, bays, and decks worked at DP World Sokhna on the above-mentioned vessel.
+                </p>
+            </div>
+
+            <div class="box">
+                <div class="mb-3 itemInsideLeft">
+                    <label for="ChiefName" class="form-label">Chief Officer Name</label>
+                    <input type="text" id="ChiefOfficerName" asp-for="ChiefOfficerName" class="form-control" required />
+                    <span asp-validation-for="ChiefOfficerName" class="text-danger"></span>
+                </div>
+
+             @*    <div class="mb-3 itemInsideRight">
+                    <label for="ChiefSignature" class="form-label">Chief Officer Signature</label>
+                    <input type="text" id="ChiefSignature" asp-for="ChiefSignature" class="form-control" required />
+                    <span asp-validation-for="ChiefSignature" class="text-danger"></span>
+                </div> *@
+            </div>
+
+            <div class="box">
+                <div class="mb-3 itemInsideLeft">
+                    <label for="SupervisorName" class="form-label">Supervisor Name</label>
+                    <input type="text" id="SupervisorName" asp-for="SupervisorName" class="form-control" required />
+                    <span asp-validation-for="SupervisorName" class="text-danger"></span>
+                </div>
+
+               @*  <div class="mb-3 itemInsideRight">
+                    <label for="SupervisorSignature" class="form-label">Supervisor Signature</label>
+                    <input type="text" id="SupervisorSignature" asp-for="SupervisorSignature" class="form-control" required />
+                    <span asp-validation-for="SupervisorSignature" class="text-danger"></span>
+                </div> *@
+            </div>
+
+            @* <div class="box">
+                <div class="mb-3 itemInsideLeft">
+                    <label for="lastContainerTime" class="form-label">Last Container Time</label>
+                    <input type="text" id="lastContainerTime" asp-for="LastContainerTime" class="form-control" required />
+                    <span asp-validation-for="LastContainerTime" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 itemInsideRight">
+                    <label for="lashingCompletionTime" class="form-label">Lashing Completion Time</label>
+                    <input type="text" id="lashingCompletionTime" asp-for="LashingCompletionTime" class="form-control" required />
+                    <span asp-validation-for="LashingCompletionTime" class="text-danger"></span>
+                </div>
+            </div> *@
+
+            @* <div class="box">
+                <div class="mb-3 itemInsideLeft">
+                    <label for="lashingVerifiedTime" class="form-label">Lashing Verified Time</label>
+                    <input type="text" id="lashingVerifiedTime" asp-for="LashingVerifiedTime" class="form-control" required />
+                    <span asp-validation-for="LashingVerifiedTime" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 itemInsideRight">
+                    <label for="lashingCertifiedTime" class="form-label">Lashing Certified Time</label>
+                    <input type="text" id="lashingCertifiedTime" asp-for="LashingCertifiedTime" class="form-control" required />
+                    <span asp-validation-for="LashingCertifiedTime" class="text-danger"></span>
+                </div>
+            </div> *@
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-primary" onclick="window.print()">Print</button>
+                <button type="button" class="btn btn-danger" asp-action="Delete">Delete</button>
+                <button type="button" class="btn btn-secondary" asp-action="Update">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+<style>
+    .fade_rule {
+        height: 1.4px;
+        background-color: #E6E6E6;
+        margin: 0;
+        background-image: -moz-linear-gradient(left, #D5D5DD 50%, white 98%);
+        background-image: -webkit-linear-gradient(left, #D5D5DD 50%, white 98%);
+        background-image: -ms-linear-gradient(left, #D5D5DD 50%, white 98%);
+        background-image: -webkit-gradient( linear, color-stop(0.05, white), color-stop(0.1, gray), color-stop(0.98, white) );
+    }
+
+    .Title-Invoice {
+        font-family: 'pilat-Bold';
+        color: var(--primary-color);
+        margin-top: 50px;
+    }
+
+    .Truck-Input {
+        font-family: 'pilat-Demi';
+    }
+
+    .fade_rule {
+        height: 1.4px;
+        margin-top: 6px !important;
+        /* background-color: white; */
+        /* background-color: #b8b6eb66; */
+        background: linear-gradient(to right, #D5D5DD 50%, white 98%);
+        margin: 0;
+        background-image: -moz-linear-gradient(left, #D5D5DD 50%, white 98%);
+        background-image: -webkit-linear-gradient(left, #D5D5DD 50%, white 98%);
+        background-image: -ms-linear-gradient(left, #D5D5DD 50%, white 98%);
+    }
+
+    .btn-search {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Pilat;
+        color: white;
+        height: 50px;
+        background: linear-gradient(to right, #1E1343, #312A82,#5154B6);
+        left: 50%;
+        margin-left: -35px;
+        top: 50%;
+        border-radius: 30px !important;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .btn-search1 {
+    }
+
+    .mg {
+        margin-bottom: 50px;
+    }
+
+    .s004 {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 30px;
+        background-size: cover;
+        background-position: center center;
+        /* padding-right: 15px; */
+    }
+
+    .Search_check {
+        background: var(--primary-color2) !important;
+        color: white !important;
+        font-family: 'pilat-Demi' !important;
+        padding: 10px;
+        border: none;
+        width: 250px;
+    }
+
+    .bg-breadcrumb {
+        background: linear-gradient(rgba(19, 53, 123, 0.5), rgba(19, 53, 123, 0.5));
+        /* background-image: url('/Tfusionzodiac/Imgs/Port18.jpg'); */
+         /* background-image: url(~/Imgs/Port18.jpg);  */
+        background-image: url('@Url.Content("~/Imgs/Port18.jpg")');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 150px 0 50px 0;
+    }
+
+    .bg-breadcrumb1 {
+        background: rgba(28, 27, 53, 0.65); /* Adjust the last value (0.5) for opacity */
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    /* General Styling */
+.container-form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Form Header */
+  h3 {
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Box Styling */
+  .box {
+    /* background-color: #f9f9f9; */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .box h5 {
+    color: #34495e;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .box p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-left: 20px;
+  }
+  
+  /* Form Layout */
+  .row {
+    /* display: grid; */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  label {
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 8px;
+  }
+  
+  input.form-control {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input.form-control:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+  
+  input.form-control:invalid {
+    border-color: #e74c3c;
+  }
+  
+  input.form-control:disabled {
+    background-color: #f4f4f4;
+  }
+  
+
+    .box {
+      padding: 15px;
+    }
+  
+    h3 {
+      font-size: 1.5rem;
+    }
+  
+    .row {
+      grid-template-columns: 1fr;
+    }
+  
+    .btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  
+  /* Validation Feedback */
+  .text-danger {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  .form-group {
+    margin-top: 20px;
+  }
+  
+  /* Form Controls Styling */
+  input[type="text"]:focus,
+  input[type="text"]:active {
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+  }
+  
+  input[type="text"]:disabled {
+    background-color: #ecf0f1;
+  }
+  
+  /* Overall Container */
+  .container-form {
+    background-color: #ecf0f1;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Declaration Styling */
+  .declaration-box {
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  button {
+    padding: 10px 15px;
+    margin-right: 10px;
+  }
+  
+  button[type="button"] {
+    /* background-color: #6c757d; */
+    color: white;
+  }
+  
+  button[type="submit"] {
+    /* background-color: #007bff; */
+    color: white;
+  }
+</style>
+

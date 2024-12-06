@@ -1,0 +1,116 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\vendor\jquery-jquery-f79d5f1\.github\dependabot.yml" />
+    <None Include="wwwroot\assets\vendor\jquery-jquery-f79d5f1\.github\ISSUE_TEMPLATE.md" />
+    <None Include="wwwroot\assets\vendor\jquery-jquery-f79d5f1\.github\lock.yml" />
+    <None Include="wwwroot\assets\vendor\jquery-jquery-f79d5f1\.github\PULL_REQUEST_TEMPLATE.md" />
+    <None Include="wwwroot\assets\vendor\jquery-jquery-f79d5f1\.github\workflows\node.js.yml" />
+    <None Include="wwwroot\assets\vendor\select2\.github\CONTRIBUTING.md" />
+    <None Include="wwwroot\assets\vendor\select2\.github\FUNDING.yml" />
+    <None Include="wwwroot\assets\vendor\select2\.github\ISSUE_TEMPLATE.md" />
+    <None Include="wwwroot\assets\vendor\select2\.github\PULL_REQUEST_TEMPLATE.md" />
+    <None Include="wwwroot\assets\vendor\select2\.github\stale.yml" />
+    <None Include="wwwroot\assets\vendor\select2\.github\workflows\docs-deploy.yml" />
+    <None Include="wwwroot\assets\vendor\select2\.github\workflows\main.yml" />
+    <None Include="wwwroot\assets\vendor\select2\.github\workflows\package-deploy.yml" />
+    <None Include="wwwroot\assets\vendor\select2\.git\config" />
+    <None Include="wwwroot\assets\vendor\select2\.git\description" />
+    <None Include="wwwroot\assets\vendor\select2\.git\HEAD" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\applypatch-msg.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\commit-msg.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\post-update.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\pre-applypatch.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\pre-commit.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\pre-merge-commit.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\pre-push.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\pre-rebase.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\pre-receive.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\push-to-checkout.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\hooks\update.sample" />
+    <None Include="wwwroot\assets\vendor\select2\.git\index" />
+    <None Include="wwwroot\assets\vendor\select2\.git\info\exclude" />
+    <None Include="wwwroot\assets\vendor\select2\.git\logs\HEAD" />
+    <None Include="wwwroot\assets\vendor\select2\.git\logs\refs\heads\develop" />
+    <None Include="wwwroot\assets\vendor\select2\.git\logs\refs\remotes\origin\HEAD" />
+    <None Include="wwwroot\assets\vendor\select2\.git\objects\pack\pack-82767133a87eda796ff3b5a2c0fefaad72b8407c.idx" />
+    <None Include="wwwroot\assets\vendor\select2\.git\objects\pack\pack-82767133a87eda796ff3b5a2c0fefaad72b8407c.pack" />
+    <None Include="wwwroot\assets\vendor\select2\.git\packed-refs" />
+    <None Include="wwwroot\assets\vendor\select2\.git\refs\heads\develop" />
+    <None Include="wwwroot\assets\vendor\select2\.git\refs\remotes\origin\HEAD" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.github\CODE_OF_CONDUCT.md" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.github\FUNDING.yml" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.github\ISSUE_TEMPLATE\01_bug_report.yml" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.github\ISSUE_TEMPLATE\02_feature_request.yml" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.github\ISSUE_TEMPLATE\03_question.md" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.github\workflows\chrome.yml" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.github\workflows\firefox.yml" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.github\workflows\webkit.yml" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\config" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\description" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\HEAD" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\applypatch-msg.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\commit-msg.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\post-update.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\pre-applypatch.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\pre-commit.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\pre-merge-commit.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\pre-push.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\pre-rebase.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\pre-receive.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\push-to-checkout.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\hooks\update.sample" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\index" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\info\exclude" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\logs\HEAD" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\logs\refs\heads\main" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\logs\refs\remotes\origin\HEAD" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\objects\pack\pack-9714e4bbaa3f017537e387ea554d0678a311625d.idx" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\objects\pack\pack-9714e4bbaa3f017537e387ea554d0678a311625d.pack" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\packed-refs" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\refs\heads\main" />
+    <None Include="wwwroot\assets\vendor\sweetalert2\.git\refs\remotes\origin\HEAD" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\vendor\select2\.git\objects\info\" />
+    <Folder Include="wwwroot\assets\vendor\select2\.git\refs\tags\" />
+    <Folder Include="wwwroot\assets\vendor\sweetalert2\.git\objects\info\" />
+    <Folder Include="wwwroot\assets\vendor\sweetalert2\.git\refs\tags\" />
+  </ItemGroup>
+	
+<ItemGroup>
+	 <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.23" />
+	 <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.27">
+	   <PrivateAssets>all</PrivateAssets>
+	   <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	 </PackageReference>
+	 <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.27" />
+	 <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.27">
+	   <PrivateAssets>all</PrivateAssets>
+	   <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	 </PackageReference>
+	    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="6.0.0" />
+	 <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.27" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="6.21.130" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.130" />
+	<PackageReference Include="Serilog.AspNetCore" Version="6.0.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+    <PackageReference Include="Serilog.Sinks.Oracle" Version="1.1.1" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+  </ItemGroup>
+
+</Project>
