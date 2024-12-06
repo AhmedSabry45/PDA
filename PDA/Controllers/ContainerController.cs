@@ -265,7 +265,7 @@ namespace PDA.Controllers
                 CreatedDate = DateTime.Now,
                 Actions="Add",
                 VesselCode="Ado54",
-                CreatedBy = "test", // Use User.Identity.Name in real scenarios
+                CreatedBy = "test",  // Use User.Identity.Name in real scenarios
                 IsActive = true
             };
 
@@ -513,26 +513,5 @@ namespace PDA.Controllers
         }
 
 
-        [HttpPost("SaveContainer")]
-        public async Task<IActionResult> SaveContainer(ContainerDamageReportVM containerDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            //containerDto.ContainerNumber
-
-
-            try
-            {
-                //await _containerService.SaveContainerAsync(containerDto);
-                return Ok(new { Message = "Container information saved successfully." });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { Message = "An error occurred while saving the container data.", Error = ex.Message });
-            }
-        }
-    }
+         }
 }
